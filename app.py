@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="LB Simulador", layout="wide")
 
 # Título e Identidade
-st.title("📊 Labor Business: Operating System")
+st.title("📊 Labor Business")
 st.subheader("Simulador de Funil de Vendas")
 st.divider()
 
