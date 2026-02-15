@@ -64,4 +64,10 @@ with col2:
 st.divider()
 
 st.write("#### Detalhamento do Fluxo de Conversão")
-c1, c2
+c1, c2, c3, c4 = st.columns(4)
+
+# Para números inteiros (como quantidade de pessoas), usamos apenas o ponto como separador
+c1.metric("Base Ativa", f"{base_ativa:,}".replace(",", "."))
+c2.metric("Indicações", f"{int(total_recomendacoes):,}".replace(",", "."))
+c3.metric("Reuniões", f"{int(reunioes_geradas):,}".replace(",", "."))
+c4.metric("Novas Vendas", f"{int(novos_clientes):,}".replace(",", "."))
