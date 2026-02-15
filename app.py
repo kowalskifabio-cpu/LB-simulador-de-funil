@@ -45,8 +45,7 @@ receita_anual = receita_mensal * 12
 
 # --- EXIBIÇÃO DOS RESULTADOS ---
 
-st.title("📊 Labor Business")
-st.subheader("Simulador de Funil de Vendas")
+st.title("📊 Simulador de Funil de Vendas")
 st.divider()
 
 col1, col2 = st.columns(2)
