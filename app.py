@@ -1,15 +1,22 @@
 import streamlit as st
+import os
 
 # Configuração da página
 st.set_page_config(page_title="LB Simulador", layout="wide")
 
-# Título e Identidade
-st.title("📊 Labor Business")
-st.subheader("Simulador de Funil de Vendas")
-st.divider()
-
 # --- BARRA LATERAL (Entradas de dados) ---
 with st.sidebar:
+    # Inserindo a imagem no topo da barra lateral
+    nome_da_imagem = "tela inicial LB.png"
+    
+    # Este bloco verifica se a imagem existe para não travar o app se você esquecer de subir o arquivo
+    if os.path.exists(nome_da_imagem):
+        st.image(nome_da_imagem, use_container_width=True)
+    else:
+        st.sidebar.warning(f"⚠️ Arquivo '{nome_da_imagem}' não encontrado no GitHub.")
+    
+    st.divider()
+    
     st.header("1. BASE & ENGAJAMENTO")
     base_ativa = st.slider("Base Ativa (Clientes atuais)", 0, 5000, 800)
     taxa_recomendacao = st.slider("Taxa de Recomendação (%)", 0, 100, 60)
@@ -36,6 +43,11 @@ receita_mensal = novos_clientes * ticket_medio
 receita_anual = receita_mensal * 12
 
 # --- EXIBIÇÃO DOS RESULTADOS ---
+
+# Título e Identidade
+st.title("📊 Labor Business")
+st.subheader("Simulador de Funil de Vendas")
+st.divider()
 
 # Parte Superior: Os dois grandes números
 col1, col2 = st.columns(2)
